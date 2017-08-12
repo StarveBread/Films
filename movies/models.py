@@ -12,11 +12,11 @@ class Film(models.Model):
 	
 	
 	def __str__(self):
-		return self.title
-		#return "{} actor {}".format(self.title,self.list_actor())
+		#return self.title
+		return "{} actor {}".format(self.title,self.list_actor())
 
-	#def list_actor(self):
-	#	return ",".join([actor.first_name for actor in self.actor.all()])
+	def list_actor(self):
+		return ",".join([actor.first_name for actor in self.actor.all()])
 
 	def save(self, *args,**kwargs):
 		super(Film,self).save(*args,**kwargs)

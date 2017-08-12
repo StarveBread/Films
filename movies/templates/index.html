@@ -1,0 +1,21 @@
+<title>Test Page</title>
+<body>
+{% if request.user.is_authenticated %}
+	<h1>Hi {{request.user.username |title}}!</h1>
+		{% else %}
+	<p>Welcome!</p>
+{% endif %}
+
+
+
+<h1>{{ movies.count }} Films:</h1>
+
+{% for movie in movies %}
+	<p> Title: {{ movie.title }}</p>
+	<p> Year: {{ movie.year }}</p>
+	<p> Genre: {{ movie.genre }}</p>
+	<p> Actor: {{ movie.actor }}</p>
+	
+{% endfor %}
+
+</body>

@@ -1,0 +1,19 @@
+<title>Test Page</title>
+<body>
+{% if request.user.is_authenticated %}
+	<h1>Hi {{request.user.username |title}}!</h1>
+		{% else %}
+	<p>Welcome!</p>
+{% endif %}
+
+
+
+<h1>{{ genres.count }} Genres:</h1>
+
+{% for genre in genres %}
+	<p> Type: {{ genre.type_name }}</p>
+	<p> Year: {{ genre.description }}</p>
+
+{% endfor %}
+
+</body>

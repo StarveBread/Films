@@ -1,0 +1,18 @@
+<title>Test Page</title>
+<body>
+{% if request.user.is_authenticated %}
+	<h1>Hi {{request.user.username |title}}!</h1>
+		{% else %}
+	<p>Welcome!</p>
+{% endif %}
+
+
+
+<h1>{{ actors.count }} Actors:</h1>
+
+{% for actor in actors %}
+	<p> Name: {{ actor.first_name }} {{ actor.middle_name }} {{ actor.last_name }}</p>
+	
+{% endfor %}
+
+</body>
